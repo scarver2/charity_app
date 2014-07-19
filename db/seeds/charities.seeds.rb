@@ -1,7 +1,7 @@
 charities = [
   'American Heart Association',
   'Living Waters',
-  'MAke-A-Wish',
+  'Make-A-Wish',
   'Operation Blessing',
   "Samaritan's Purse",
   'St. Jude'
