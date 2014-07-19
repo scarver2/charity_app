@@ -4,6 +4,7 @@ gem 'rails', '4.1.4'
 
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'bundler'
+gem 'cancancan'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'devise', github: 'plataformatec/devise'
 gem 'jbuilder', '~> 2.0'
