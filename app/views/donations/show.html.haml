@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Charity:
+  = @donation.charity
+%p
+  %b User:
+  = @donation.user
+%p
+  %b Amount:
+  = @donation.amount
+%p
+  %b Recurring:
+  = @donation.recurring
+%p
+  %b Frequency:
+  = @donation.frequency
+
+= link_to 'Edit', edit_donation_path(@donation)
+\|
+= link_to 'Back', donations_path

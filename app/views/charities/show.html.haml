@@ -1,0 +1,21 @@
+%p#notice= notice
+= link_to 'Back', charities_path
+
+%h1= @charity.name
+
+%b Make a donation
+%br
+Insert donation form here
+= simple_form_for Donation.new(charity: @charity, user: current_user) do |f|
+  = f.input :charity_id, as: :hidden
+  = f.input :user_id, as: :hidden
+  = f.input :amount
+  = f.input :recurring
+  / TODO: show this only if recurring selected
+  = f.input :frequency, as: :select, collection: Donation::FREQUENCY
+  = f.submit
+  
+= link_to 'Edit', edit_charity_path(@charity) if can? :update, @charity
+= link_to 'Destroy', @charity, method: :delete, data: { confirm: 'Are you sure?' } if can? :delete, @charity
+
+%br

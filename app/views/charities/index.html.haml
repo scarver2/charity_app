@@ -1,0 +1,7 @@
+%h1 List of Charities
+%ul
+  - @charities.each do |charity|
+    %li
+      = link_to charity.name, charity
+/ %br
+/ = link_to 'New Charity', new_charity_path

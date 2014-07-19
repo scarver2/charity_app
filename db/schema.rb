@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140719022904) do
+ActiveRecord::Schema.define(version: 20140719131707) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -54,6 +54,19 @@ ActiveRecord::Schema.define(version: 20140719022904) do
   end
 
   add_index "charities", ["user_id"], name: "index_charities_on_user_id"
+
+  create_table "donations", force: true do |t|
+    t.integer  "charity_id"
+    t.integer  "user_id"
+    t.decimal  "amount"
+    t.boolean  "recurring",  default: false, null: false
+    t.string   "frequency"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "donations", ["charity_id"], name: "index_donations_on_charity_id"
+  add_index "donations", ["user_id"], name: "index_donations_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

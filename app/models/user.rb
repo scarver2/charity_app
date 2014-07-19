@@ -15,6 +15,9 @@ class User < ActiveRecord::Base
     end
   end
 
-
+  def name
+    username || email
+  end
+  
   devise authentication_keys: [:login]
 end
